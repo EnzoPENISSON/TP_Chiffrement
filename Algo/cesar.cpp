@@ -12,15 +12,13 @@ using namespace std;
 */
 string cesar(const string& word, int k, bool decipher = false) {
     string result; // result variable
-
+    k = decipher ? -k : k;
     for (int i = 0; i <= word.size() - 1; i++) {
         int pos = positionAlphabet(word[i]);
-        if (pos == -1) { // Character not found
-            return "ERROR";
-        }
         int mouv = (pos + k) % 26;
-        if (decipher) {
-            mouv = (pos - k) % 26;
+        if (pos == -1) { // Character not found
+            result += word[i];
+            continue;
         }
         if (isupper(word[i])) {
             result += alphabetMaj[mouv];

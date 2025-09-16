@@ -6,8 +6,10 @@
 
 TEST(CesarTest, HandlesPositiveInput) {
     EXPECT_EQ(cesar("hello",3), "khoor");
-    EXPECT_EQ(cesar("khoor",3,true), "hello");
+    EXPECT_EQ(cesar("khoor",3,true), "hello"); // Test decrypt
 
     EXPECT_EQ(cesar("HELLO",3), "khoor");
-    EXPECT_EQ(cesar("KHOOR",3,true), "hello");
+    EXPECT_EQ(cesar("KHOOR",3,true), "hello"); // Test decrypt
+
+    EXPECT_EQ(cesar("MOI0",3), "ERROR");
 }

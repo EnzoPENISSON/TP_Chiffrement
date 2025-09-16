@@ -4,8 +4,8 @@
 
 using namespace std;
 
-const string alphabet = "abcdefghijklmnopqrstuvwxyz";
-const string alphabetMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const string alphabet = "abcdefghijklmnopqrstuvwxyz"; // lower case
+const string alphabetMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // upper case
 
 /*
  * Function that return the position of a letter in the alphabet
@@ -13,7 +13,7 @@ const string alphabetMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int positionAlphabet(const char letter) {
 
     for (int i = 0; i < alphabet.size(); i++) {
-        if (alphabet[i] == letter or alphabetMaj[i] == letter) {
+        if (alphabet[i] == letter or alphabetMaj[i] == letter) { // letter position found
             return i;
         }
     }
@@ -29,11 +29,11 @@ int positionAlphabet(const char letter) {
  *  - bool decipher -> default false, if set to true decipher the word
 */
 string cesar(const string& word, int k, bool decipher = false) {
-    string result;
+    string result; // result variable
 
     for (int i = 0; i <= word.size() - 1; i++) {
         int pos = positionAlphabet(word[i]);
-        if (pos == -1) {
+        if (pos == -1) { // Character not found
             return "ERROR";
         }
         int mouv = (pos + k) % 26;

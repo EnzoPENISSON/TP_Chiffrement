@@ -16,7 +16,7 @@ string cesar(const string& word, int k, bool decipher = false) {
     for (int i = 0; i <= word.size() - 1; i++) {
         int pos = positionAlphabet(word[i]);
         int mouv = (pos + k) % 26;
-        if (pos == -1) { // Character not found
+        if (pos == -1) { // Character not found so add character without offset
             result += word[i];
             continue;
         }

@@ -1,9 +1,17 @@
 #include <iostream>
-#include "Algo/cesar.h"
+#include "Algo/cesar.cpp"
+#include "Algo/vigenere.cpp"
+
+using namespace std;
 
 int main() {
-    std::cout << cesar("hello",3) << std::endl;
-    std::cout << cesar("khoor",3,true) << std::endl;
+    cout << "César:" << endl;
+    cout << cesar("hello",3) << endl;
+    cout << cesar("khoor",3,true) << endl;
+
+    cout << endl << "Vigenere:" << endl;
+    cout << vigenere("bonjour", "clef") << endl;
+    cout << vigenere("dzroqfv", "clef",true) << endl;
     return 0;
 }
 

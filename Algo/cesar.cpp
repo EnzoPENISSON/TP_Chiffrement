@@ -1,25 +1,7 @@
-#include <iostream>
 #include <string>
-#include <gtest/gtest.h>
+#include "utils.h"
 
 using namespace std;
-
-const string alphabet = "abcdefghijklmnopqrstuvwxyz"; // lower case
-const string alphabetMaj = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // upper case
-
-/*
- * Function that return the position of a letter in the alphabet
- */
-int positionAlphabet(const char letter) {
-
-    for (int i = 0; i < alphabet.size(); i++) {
-        if (alphabet[i] == letter or alphabetMaj[i] == letter) { // letter position found
-            return i;
-        }
-    }
-
-    return -1; // wrong character
-}
 
 /*
  * Cesar function

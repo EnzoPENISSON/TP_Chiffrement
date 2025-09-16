@@ -8,6 +8,8 @@ enable_testing()
 add_executable(TP_Chiffrement
         main.cpp
         Algo/cesar.cpp
+        Algo/vigenere.cpp
+        Algo/utils.cpp
 )
 
 find_package(GTest REQUIRED)
@@ -15,8 +17,12 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(runTests
         Test/testCesar.cpp
+        Test/testVigenere.cpp
         Algo/cesar.cpp
+        Algo/vigenere.cpp
+        Algo/utils.cpp
 )
+
 
 target_link_libraries(runTests GTest::GTest GTest::Main pthread)
 

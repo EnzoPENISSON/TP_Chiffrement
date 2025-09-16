@@ -3,7 +3,8 @@
 
 #include <string>
 
-int positionAlphabet(char c);
-std::string cesar(const std::string& texte, int cle, bool decrypt = false);
+using namespace std;
+
+string cesar(const std::string& texte, int cle, bool decrypt = false);
 
 #endif

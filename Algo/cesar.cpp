@@ -22,7 +22,11 @@ string cesar(const string& word, int k, bool decipher = false) {
         if (decipher) {
             mouv = (pos - k) % 26;
         }
-        result += alphabet[mouv];
+        if (isupper(word[i])) {
+            result += alphabetMaj[mouv];
+        } else {
+            result += alphabet[mouv];
+        }
     }
 
     return result;

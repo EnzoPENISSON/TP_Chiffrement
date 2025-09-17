@@ -7,9 +7,9 @@ string vigenere(string plainText, string key, bool decipher = false) {
     string result;
     string newKey = key;
     if (key.length() < plainText.length()) {
-        int diff = plainText.length() - key.length();
+        int diff = plainText.length() - key.length(); // Calcul the difference
         for (int i = 0; i < diff; i++) {
-            newKey += key[i % key.length()];
+            newKey += key[i % key.length()]; // generate key : bonjour -> clefcle
         }
     }
 
@@ -18,10 +18,14 @@ string vigenere(string plainText, string key, bool decipher = false) {
         int poskey = positionAlphabet(newKey[i]);
         int newpos = (pos + poskey) % 26;
         if (decipher) {
-            newpos = (pos - poskey + 26) % 26;
+            newpos = (pos - poskey + 26) % 26; // Decipher the plainText
         }
 
-        result += alphabet[newpos];
+        if (isupper(plainText[i])) {
+            result += alphabetMaj[newpos]; // Add to result the alpabetMaj position
+        } else {
+            result += alphabet[newpos]; // Add to result the alpabet position
+        }
     }
 
     return result;

@@ -6,5 +6,5 @@
 
 TEST(VigenereTest, HandlesPositiveInput) {
     EXPECT_EQ(vigenere("bonjour","clef"), "dzroqfv");
-    EXPECT_EQ(vigenere("dzroqfv","clef"), "bonjour"); // Test decrypt
+    EXPECT_EQ(vigenere("dzroqfv","clef", true), "bonjour"); // Test decrypt
 }

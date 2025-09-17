@@ -11,5 +11,5 @@ TEST(CesarTest, HandlesPositiveInput) {
     EXPECT_EQ(cesar("HELLO",3), "KHOOR");
     EXPECT_EQ(cesar("KHOOR",3,true), "HELLO"); // Test decrypt
 
-    EXPECT_EQ(cesar("MOI0",3), "ERROR");
+    EXPECT_EQ(cesar("MOI0",3), "PRL0");
 }

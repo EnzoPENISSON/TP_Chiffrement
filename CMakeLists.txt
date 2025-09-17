@@ -10,6 +10,7 @@ add_executable(TP_Chiffrement
         Algo/cesar.cpp
         Algo/vigenere.cpp
         Algo/utils.cpp
+        Algo/matrice.cpp
 )
 
 find_package(GTest REQUIRED)

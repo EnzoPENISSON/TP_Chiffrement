@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <numeric>
 #include "matrice.h"
 
 using namespace std;
 
 using Matrix = vector<vector<int>>;
 
-/*
+/**
  * Function to render a matrix on a terminal
  */
 void printMatrix(const Matrix& A) {
@@ -20,7 +21,7 @@ void printMatrix(const Matrix& A) {
     }
 }
 
-/*
+/**
  * Function to addition two matrix
  */
 Matrix addMatrices(const Matrix& A, const Matrix& B) {
@@ -36,7 +37,7 @@ Matrix addMatrices(const Matrix& A, const Matrix& B) {
     return result;
 }
 
-/*
+/**
  * Function to mul two matrix
  */
 Matrix multMatrices(const Matrix& A, const Matrix& B) {
@@ -54,4 +55,30 @@ Matrix multMatrices(const Matrix& A, const Matrix& B) {
         }
     }
     return result;
+}
+
+/**
+ * Calculate the determinant of a 2 by 2 matrix
+ * using this formula
+ * [a b]
+ * [c d]
+ * (a x d) - (b x c)
+ */
+int determinant2x2(const Matrix& A) {
+    if (A.size() != 2 || A[0].size() != 2 || A[1].size() != 2) { // verify the size of the matrix is 2 by 2
+        throw invalid_argument("Matrix must be 2x2");
+    }
+    return (A[0][0] * A[1][1]) - (A[0][1] * A[1][0]);
+}
+
+/**
+
+ */
+bool isInvertibleModuloN(const Matrix& A, int n) {
+    int det = determinant2x2(A); // Calcul the determinant of a 2 by 2 matrix
+    det %= n;
+    if (det < 0) det += n; // keep positive mod n
+
+    // Matrix is invertible mod n if gcd(det, n) == 1
+    return std::gcd(det, n) == 1;
 }

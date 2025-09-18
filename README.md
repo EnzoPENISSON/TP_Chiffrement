@@ -31,7 +31,7 @@ make
 ./TP_Chiffrement
 
 # Run Test
-./
+./runTests
 ```
 
 ## 📦 Requirements

@@ -21,6 +21,7 @@ int main() {
     // TP Matrix
     Matrix A = {{1, 2}, {3, 4}}; // Matrix A
     Matrix B = {{5, 6}, {7, 8}}; // Matrix B
+    Matrix C = {{98, 67}, {34, 13}}; // Matrix C
 
     // Sum two matrix
     Matrix sum = addMatrices(A, B);
@@ -39,6 +40,9 @@ int main() {
     cout << "Matrix A det : " << detA <<  endl;
     const int detB = determinant2x2(B);
     cout << "Matrix B det : " << detB<< endl;
+    const int detC = determinant2x2(C);
+    cout << "Matrix B det : " << detC<< endl;
+
 
     // Verify if the matrix can be reversed
     cout << endl;

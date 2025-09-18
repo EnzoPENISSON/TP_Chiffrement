@@ -72,7 +72,7 @@ int determinant2x2(const Matrix& A) {
 }
 
 /**
-
+ * Function that return if a matrix is Invertible mod n
  */
 bool isInvertibleModuloN(const Matrix& A, int n) {
     int det = determinant2x2(A); // Calcul the determinant of a 2 by 2 matrix
